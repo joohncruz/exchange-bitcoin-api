@@ -1,0 +1,40 @@
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\csc.exe
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\System.Collections.Immutable.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\System.Reflection.Metadata.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\vbc.exe
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\VBCSCompiler.exe
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\roslyn\VBCSCompiler.exe.config
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\AngularProject.dll.config
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\AngularProject.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\AngularProject.pdb
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\obj\Debug\AngularProject.csprojResolveAssemblyReference.cache
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\obj\Debug\AngularProject.dll
+c:\Users\316143308\documents\visual studio 2015\Projects\WebApi\AngularProject\obj\Debug\AngularProject.pdb
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\csc.exe
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\vbc.exe
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\AngularProject.dll.config
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\AngularProject.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\AngularProject.pdb
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\obj\Debug\AngularProject.csprojResolveAssemblyReference.cache
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\obj\Debug\AngularProject.dll
+C:\Users\REALDATA-01\Desktop\WebApi\AngularProject\obj\Debug\AngularProject.pdb

@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html lang="pt-br">
+<head>
+    <!-- Required meta tags -->
+    <title>BitCoin - Exchange</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+       <h1>BitCoin - Exchange</h1>
+        <form class="form" autocomplete="off">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="QuantidadeVenda">Vender:</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control price-format" id="valorVenda" placeholder="Digite o valor para venda" required>
+                    </div>
+                </div><br />
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+                        <select class="form-control" id="exchangeVenda">
+                            <option value="1">FoxBit</option>
+                            <option value="2">MecBit</option>
+                            <option value="3" selected>B2U</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Comprar:</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control price-format" id="valorCompra" placeholder="Digite o valor para comprar" required>
+                    </div>
+                </div><br />
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+                        <select class="form-control" id="exchangeCompra">
+                            <option value="1">FoxBit</option>
+                            <option value="2">MecBit</option>
+                            <option value="3" selected>B2U</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Montante:</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <input type="number" class="form-control" id="montante"  placeholder="Digite o montante" id="money" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Qtd R$:</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control price-format" id="resultadoQuantidade" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Qual %:</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control price-format" id="resultadoPorcentagem" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button type="submit" id="calcular" class="btn btn-warning">Calcular</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-6">
+                    <button id="comprar" class="btn btn-success" onclick="comprar()">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <div class="dados-compra">
+            
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/js/index.js"></script>
+
+</body>
+</html>
