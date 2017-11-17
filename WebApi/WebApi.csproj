@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.7.2.1\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
@@ -117,15 +123,18 @@
     <Compile Include="Models\B2U.cs" />
     <Compile Include="Models\CalcularValoresResult.cs" />
     <Compile Include="Models\Calculator.cs" />
+    <Compile Include="Models\Configuration\DefaultContext.cs" />
     <Compile Include="Models\ExchangeFactory.cs" />
     <Compile Include="Models\FoxBit.cs" />
     <Compile Include="Models\IExchange.cs" />
     <Compile Include="Models\IExchangeFactory.cs" />
     <Compile Include="Models\MecBit.cs" />
+    <Compile Include="Models\PurchaseOrder.cs" />
     <Compile Include="Models\Requests\Buy.cs" />
     <Compile Include="Models\Requests\CalcularValoresRequest.cs" />
     <Compile Include="Models\Requests\FullResult.cs" />
     <Compile Include="Models\Requests\Validations\CalcularValoresRequestValidator.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
