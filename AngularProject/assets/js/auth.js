@@ -81,10 +81,28 @@ if (document.querySelector('#md-cadastro')) {
             formSignUpResponseValidateForm += 'Por favor informe a senha. \n'
         }
 
-        console.log(formSignUpResponseValidateForm)
-
         if (formSignUpResponseValidateForm === '') {
-            alert('md-cadastro')
+
+            event.preventDefault()
+
+            axios.post(`http://localhost:49945/api/user`,
+                {
+                   'UserName': formSignUp.username.value,
+                   'Email': formSignUp.email.value,
+                   'Password': formSignUp.senha.value
+                })
+                .then(resultado => {
+                    alert('Usuario criado com sucesso');
+
+                    formAuth.username.value = formSignUp.username.value;
+                    formSignUp.username.value = '';
+                    formSignUp.email.value = '';
+                    formSignUp.senha.value = '';
+
+                })
+                .catch(error => console.log(error))
+
+
         } else {
             alert(formSignUpResponseValidateForm)
         }

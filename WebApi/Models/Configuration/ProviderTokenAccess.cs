@@ -14,8 +14,9 @@ namespace WebApi.Models.Configuration
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var usuario = BaseUsuarios.Users().FirstOrDefault(x => x.UserName == context.UserName && x.Password == context.Password);
-            if (usuario == null)
+            //var usuario = BaseUsuarios.Users().FirstOrDefault(x => x.UserName == context.UserName && x.Password == context.Password);
+            var usuario = User.Buscar(context.UserName, context.Password).FirstOrDefault();
+            if (usuario == null || usuario.Id == null)
             {
                 context.SetError("invalid_grant", "Usuário não encontrado um senha incorreta.");
                 return;
