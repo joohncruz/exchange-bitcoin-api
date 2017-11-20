@@ -67,7 +67,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\js\auth.js" />
     <Content Include="assets\js\index.js" />
+    <Content Include="login.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

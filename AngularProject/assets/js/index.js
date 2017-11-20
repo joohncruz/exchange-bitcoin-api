@@ -1,39 +1,16 @@
-﻿let elementos = {
+﻿if (!loadToken()) redirect('http://localhost:50410/login.html')
+
+let elementos = {
     elValorVenda: document.querySelector('#valorVenda'),
     elExchangeVenda: document.querySelector('#exchangeVenda'),
     elValorCompra: document.querySelector('#valorCompra'),
     elExchangeCompra: document.querySelector('#exchangeCompra'),
     elMontante: document.querySelector('#montante'),
     elResultadoQuantidade: document.querySelector('#resultadoQuantidade'),
-    elResultadoPorcentagem: document.querySelector('#resultadoPorcentagem'),
-    elUserName: document.querySelector('#username'),
-    elUserPassword: document.querySelector('#password'),
+    elResultadoPorcentagem: document.querySelector('#resultadoPorcentagem')
 }
-
-let saveToken = (dataAuth) => localStorage.setItem('auth', dataAuth);
-let loadToken = () => JSON.parse(localStorage.getItem('auth'));
-
-let getToken = () => {
-
-    var xhr = new XMLHttpRequest();
-
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            saveToken(this.responseText);
-        }
-    });
-
-    xhr.open("POST", "http://localhost:49945/token");
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-    xhr.send("grant_type=password&Username=joohncruz&Password=123");
-
-}
-
-getToken();
 
 let buscarOrdensDeCompra = () => {
-    console.log(loadToken())
 
     axios.get(`http://localhost:49945/api/buscar`, { headers: { 'Authorization': `bearer ${loadToken().access_token}` } })
         .then(response => document.querySelector('.dados-compra').innerHTML = renderTable(response.data))
@@ -43,7 +20,7 @@ let buscarOrdensDeCompra = () => {
 buscarOrdensDeCompra()
 
 let comprar = () => {
-    if (elementos.elResultadoQuantidade.value == '' || elementos.elResultadoPorcentagem.value == '') {
+    if (elementos.elResultadoQuantidade.value === '' || elementos.elResultadoPorcentagem.value === '') {
         alert('E preciso realizar o calculo')
     } 
 
@@ -62,17 +39,9 @@ let comprar = () => {
 
 }
 
-document.querySelector('#formAuth').addEventListener('submit', function (event) {
-
-    event.preventDefault();
-
-    alert(elementos.elUserName.value);
-})
-
-
 document.querySelector('#formCalc').addEventListener('submit', function (event) {
 
-    event.preventDefault();
+    event.preventDefault()
 
     axios.post(`http://localhost:49945/api/calculator?traderCompra=${elementos.elExchangeCompra.value}&traderVenda=${elementos.elExchangeVenda.value}`,
         {
@@ -90,7 +59,9 @@ document.querySelector('#formCalc').addEventListener('submit', function (event) 
 
 let renderTable = (data) => {
 
-    let rows = '';
+    if (data.length === 0) return ''
+
+    let rows = ''
         
     data.forEach(x => {
         rows += templateRow(x.Id, x.ValorCompra, x.ValorVenda, x.Montante, x.ValorTotal, x.PorcentagemLucro, x.TraderCompra, x.TraderVenda)
@@ -114,8 +85,7 @@ let renderTable = (data) => {
                   ${rows}
                 </tbody>
             </table>
-    `;
-
+    `
 }
 
 let templateRow = (id, valorCompra, valorVenda, montante, valorTotal, porcentagemLucro, traderCompra, traderVenda) => {
@@ -130,5 +100,5 @@ let templateRow = (id, valorCompra, valorVenda, montante, valorTotal, porcentage
             <td>R$ ${valorTotal}</td>
             <td><button type="button" class="btn btn-danger">Excluir</button></td>
         </tr>
-    `;
+    `
 }
