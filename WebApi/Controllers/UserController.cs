@@ -7,11 +7,11 @@ namespace WebApi.Controllers
     public class UserController : ApiController
     {
         [HttpGet]
-        public IHttpActionResult Get([FromBody] User user)
+        public IHttpActionResult Get(string username, string password)
         {
             try
             {
-                var response = Models.User.Buscar(user.UserName, user.Password);
+                var response = Models.User.Buscar(username, password);
                 return Ok(response);
             }
             catch (System.Exception ex)

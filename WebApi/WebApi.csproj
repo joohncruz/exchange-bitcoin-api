@@ -133,6 +133,7 @@
     <Compile Include="Models\BaseUsuarios.cs" />
     <Compile Include="Models\CalcularValoresResult.cs" />
     <Compile Include="Models\Calculator.cs" />
+    <Compile Include="Models\Configuration\ClaimsUserIdentity.cs" />
     <Compile Include="Models\Configuration\ProviderTokenAccess.cs" />
     <Compile Include="Models\ExchangeFactory.cs" />
     <Compile Include="Models\FoxBit.cs" />

@@ -18,7 +18,7 @@ namespace WebApi.Models
             SqlConnection SQLConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConnection"].ConnectionString);
             SQLConnection.Open();
 
-            var sql = "select Id, UserName, Email, Password from Usuarios where UserName = @Username and Password = @Password";
+            var sql = "select Id, UserName, Email from Usuarios where UserName = @Username and Password = @Password";
             SqlCommand cmd = SQLConnection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = sql;
@@ -35,8 +35,7 @@ namespace WebApi.Models
                 {
                     Id = Convert.ToInt32(sqlReader["Id"]),
                     UserName = sqlReader["UserName"].ToString(),
-                    Email = sqlReader["Email"].ToString(),
-                    Password = sqlReader["Password"].ToString()
+                    Email = sqlReader["Email"].ToString()
                 });
             }
                 

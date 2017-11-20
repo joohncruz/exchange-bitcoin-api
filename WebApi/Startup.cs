@@ -52,8 +52,8 @@ namespace WebApi
         private void ConfigCors(IAppBuilder app)
         {
             var police = new CorsPolicy();
-            police.AllowAnyHeader = true;            
-            police.Origins.Add("http://localhost:50410");
+            police.AllowAnyHeader = true;
+            police.AllowAnyOrigin = true;     
             police.Methods.Add("GET");
             police.Methods.Add("POST");
 
