@@ -17,7 +17,7 @@ namespace WebApi.Models
         public CalcularValoresResult CalcularValores(CalcularValoresRequest request)
         {
             var vt = ValorFinal(request.ValorCompra, request.ValorVenda, request.Montante, TraderCompra.Percent, TraderVenda.Percent);
-            var pl = PorcentagemLucro(vt, request.Montante, TraderCompra.Percent, TraderVenda.Percent);
+            var pl = PorcentagemLucro(vt, request.Montante);
 
             var resultadoFinal = new CalcularValoresResult
             {
@@ -38,20 +38,25 @@ namespace WebApi.Models
 
         private double ValorFinal(double valorCompra, double valorVenda, double montante, double porcentagemCompra, double porcentagemVenda)
         {
-            var montante2 = - (porcentagemCompra * montante) / 100;
-            // valorVenda =- (porcentagemVenda * valorCompra) / 100;
-            var montanteBTC = (montante2 / valorCompra);
-            montanteBTC =- 0.0007;
-            var valorVendaFinal = montanteBTC * valorVenda;
-            valorVendaFinal =- (porcentagemVenda * valorVendaFinal) / 100;
-            return montante2 - valorVendaFinal; 
+            var fee = 0.007;
+            var carteira = montante;
+
+            carteira = carteira / valorCompra;
+            carteira = carteira - (carteira * fee);
+
+            carteira = carteira * valorVenda;
+
+            var desconto = porcentagemCompra + porcentagemVenda;
+            var valorLiquido = carteira - (carteira * desconto);
+
+            var lucro = valorLiquido - montante;
+            return lucro; 
+            
         }
 
-        private double PorcentagemLucro(double valorFinal, double montante, double porcentagemCompra, double porcentagemVenda)
+        private double PorcentagemLucro(double lucro, double montante)
         {
-            var val1 = valorFinal - (valorFinal * (porcentagemCompra /100));
-            var val2 = valorFinal - (porcentagemVenda * 100);
-            return valorFinal - (valorFinal * (porcentagemVenda / 100));
+            return (100 * lucro) / montante;
         }
 
     }

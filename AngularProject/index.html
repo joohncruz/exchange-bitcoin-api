@@ -13,32 +13,27 @@
 </head>
 <body>
     <div class="container-fluid">
-       <h1>BitCoin - Exchange</h1>
-        <form class="form" autocomplete="off">
+        <h1>Autenticar</h1>
+        <form id="formAuth" class="form">
             <div class="form-group">
-                <label class="control-label col-sm-2" for="QuantidadeVenda">Vender:</label>
-                <div class="col-sm-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control price-format" id="valorVenda" placeholder="Digite o valor para venda" required>
-                    </div>
-                </div><br />
-                <div class="col-sm-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
-                        <select class="form-control" id="exchangeVenda">
-                            <option value="1">FoxBit</option>
-                            <option value="2">MecBit</option>
-                            <option value="3" selected>B2U</option>
-                        </select>
-                    </div>
-                </div>
+                <label>Usuario</label>
+                <input type="text" class="form-control" id="username">
             </div>
+            <div class="form-group">
+                <label>Senha</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+    </div>
+    <div class="container-fluid">
+       <h1>BitCoin - Exchange</h1>
+        <form id="formCalc" class="form" autocomplete="off">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="email">Comprar:</label>
                 <div class="col-sm-12">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
                         <input type="text" class="form-control price-format" id="valorCompra" placeholder="Digite o valor para comprar" required>
                     </div>
                 </div><br />
@@ -54,10 +49,29 @@
                 </div>
             </div>
             <div class="form-group">
+                <label class="control-label col-sm-2" for="QuantidadeVenda">Vender:</label>
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control price-format" id="valorVenda" placeholder="Digite o valor para venda" required>
+                    </div>
+                </div><br />
+                <div class="col-sm-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+                        <select class="form-control" id="exchangeVenda">
+                            <option value="1">FoxBit</option>
+                            <option value="2">MecBit</option>
+                            <option value="3" selected>B2U</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Montante:</label>
                 <div class="col-sm-12">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
                         <input type="number" class="form-control" id="montante"  placeholder="Digite o montante" id="money" required>
                     </div>
                 </div>
@@ -66,7 +80,7 @@
                 <label class="control-label col-sm-2" for="pwd">Qtd R$:</label>
                 <div class="col-sm-12">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
                         <input type="text" class="form-control price-format" id="resultadoQuantidade" disabled>
                     </div>
                 </div>
@@ -75,7 +89,7 @@
                 <label class="control-label col-sm-2" for="pwd">Qual %:</label>
                 <div class="col-sm-12">
                     <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-btc" aria-hidden="true"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-money" aria-hidden="true"></i></span>
                         <input type="text" class="form-control price-format" id="resultadoPorcentagem" disabled>
                     </div>
                 </div>
@@ -100,6 +114,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.1/qs.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/index.js"></script>
 

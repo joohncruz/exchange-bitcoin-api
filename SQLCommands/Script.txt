@@ -1,0 +1,28 @@
+create database bitvalor;
+use bitvalor;
+
+create table Compras(
+	Id int IDENTITY(1,1) primary key not null,
+	IdUsuario int,
+	TraderCompra varchar (50),
+	ValorCompra float (50),
+	TraderVenda varchar (50),
+	ValorVenda float (50),
+	Montante float (50),
+	ValorTotal float (50),
+	PorcentagemLucro float (50)
+)
+
+create table Usuarios(
+	Id int not null primary key identity(1,1),
+	UserName varchar(100),
+	Email varchar(100),
+	Password varchar(100)
+);
+drop table usuarios
+
+insert into Usuarios (UserName, Email, Password)values('jonathan', 'jonathan@csgo.com' ,'1234')
+
+select * from Usuarios where Email = 'jonathan@csgo.com' and Password = '1234'
+
+select * from Compras

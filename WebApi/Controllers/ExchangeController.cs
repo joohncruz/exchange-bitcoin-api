@@ -3,7 +3,6 @@ using WebApi.Models;
 using WebApi.Models.Requests;
 using WebApi.Models.Requests.Validations;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace WebApi.Controllers
 {
@@ -17,7 +16,7 @@ namespace WebApi.Controllers
             _traderFactory = new ExchangeFactory();
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         [Route("calculator")]
         public IHttpActionResult PostCalcularValores([FromBody] CalcularValoresRequest payload,
                                                  [FromUri] int traderCompra,
@@ -40,19 +39,38 @@ namespace WebApi.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         [Route("comprar")]
-        public IHttpActionResult PostComprar([FromBody] Buy buy)
+        public IHttpActionResult PostComprar([FromBody] PurchaseOrder purchaseOrder)
         {
-            if (buy == null)
+            if (purchaseOrder == null)
                 return BadRequest();
 
-            var text = System.IO.File.ReadAllText(@"C:\Users\Public\MoedaVirtual\dados.txt");
-            var newText = string.Concat(text, JsonConvert.SerializeObject(buy));
+            try
+            {
+                purchaseOrder.Inserir();
+                return Created("",purchaseOrder);
+            }
+            catch (System.Exception ex)
+            {
+                return InternalServerError(ex);
+            }
 
-            System.IO.File.WriteAllText(@"C:\Users\Public\MoedaVirtual\dados.txt", string.Concat(text, JsonConvert.SerializeObject(buy), ","));
+        }
 
-            return Ok(newText);
+        [HttpGet, Authorize]
+        [Route("buscar")]
+        public IHttpActionResult GetBuscar()
+        {
+            try
+            {
+                var list = PurchaseOrder.BuscarOrdensDeCompra(1);
+                return Ok(list);
+            }
+            catch (System.Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
     }

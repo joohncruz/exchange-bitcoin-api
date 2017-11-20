@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{6B660168-4068-414A-9EE0-B3C95235F25C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site", "AngularProject\Site.csproj", "{B3FDC1EF-720C-4A7C-BEC2-AFAC57B4CAEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLCommands", "SQLCommands", "{5A56A4D4-BB0B-4DB9-A8DC-C9E474B9137E}"
+	ProjectSection(SolutionItems) = preProject
+		SQLCommands\Script.txt = SQLCommands\Script.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4645C722-DF18-40B8-9B41-73909728A8E4}
 	EndGlobalSection
 EndGlobal
