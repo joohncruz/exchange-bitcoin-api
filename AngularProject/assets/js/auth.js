@@ -12,17 +12,18 @@ let formSignUp = {
 let saveUser = (dataUser) => localStorage.setItem('user', JSON.stringify(dataUser))
 let loadUser = () => JSON.parse(localStorage.getItem('user'))
 let getUser = (username, password) => {
-    axios.get(`http://localhost:49945/api/user`,
-    {
-        'username': formAuth.username.value,
-        'password': formAuth.senha.value
+
+    return axios({
+        method: 'get',
+        url: 'http://localhost:49945/api/usuario/teste',
+        data: {
+            username: username,
+            password: password
+        }
     })
-    .then(resultado => {
-        console.log(resultado);
-    })
-    .catch(error => console.log(error))
 }
 
+getUser('jonathan', '1234').then(result => console.log(result).catch(error => console.log(error)))
 
 let saveToken = (dataAuth) => localStorage.setItem('auth', dataAuth)
 let loadToken = () => JSON.parse(localStorage.getItem('auth'))
@@ -66,10 +67,8 @@ if (document.querySelector('#btn-entrar')) {
             if (this.readyState === 4) {
 
                 if (xhr.status === 200) {
-                    console.log(this.responseText)
-                    console.log(this.responseBody)
                     saveToken(this.responseText)
-                    //redirect('http://localhost:50410/')
+                    redirect('http://localhost:50410/')
                 } else {
                     alert('Usuário ou senha inválidos, por favor verificar!')
                 }
@@ -105,7 +104,7 @@ if (document.querySelector('#md-cadastro')) {
 
             event.preventDefault()
 
-            axios.post(`http://localhost:49945/api/user`,
+            axios.post(`http://localhost:49945/api/usuario`,
                 {
                    'UserName': formSignUp.username.value,
                    'Email': formSignUp.email.value,

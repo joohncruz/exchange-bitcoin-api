@@ -25,20 +25,12 @@ namespace WebApi.Models
                 PorcentagemLucro = pl
             };
 
-            var fullResult = new FullResult
-            {
-                calcularValoresRequest = request,
-                calcularValoresResult = resultadoFinal,
-                traderCompra = TraderCompra,
-                traderVenda = TraderVenda
-            };
-
             return resultadoFinal;
         }
 
         private double ValorFinal(double valorCompra, double valorVenda, double montante, double porcentagemCompra, double porcentagemVenda)
         {
-            var fee = 0.007;
+            var fee = 0.0007;
             var carteira = montante;
 
             carteira = carteira / valorCompra;

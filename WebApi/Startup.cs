@@ -56,6 +56,7 @@ namespace WebApi
             police.AllowAnyOrigin = true;     
             police.Methods.Add("GET");
             police.Methods.Add("POST");
+            police.Methods.Add("DELETE");
 
             var options = new CorsOptions
             {

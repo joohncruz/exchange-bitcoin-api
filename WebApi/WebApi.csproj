@@ -127,7 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\CorsConfig.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\ExchangeController.cs" />
     <Compile Include="Models\B2U.cs" />
     <Compile Include="Models\BaseUsuarios.cs" />

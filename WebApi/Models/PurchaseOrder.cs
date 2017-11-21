@@ -39,11 +39,11 @@ namespace WebApi.Models
                 {
                     Id = Convert.ToInt32(sqlReader["Id"]),
                     IdUsuario = Convert.ToInt32(sqlReader["IdUsuario"]),
-                    ValorVenda = Convert.ToDouble(sqlReader["TraderCompra"]),
+                    ValorVenda = Convert.ToDouble(sqlReader["ValorVenda"]),
                     ValorCompra = Convert.ToDouble(sqlReader["ValorCompra"]),
-                    Montante = Convert.ToDouble(sqlReader["TraderVenda"]),
-                    TraderCompra = Convert.ToInt32(sqlReader["ValorVenda"]),
-                    TraderVenda = Convert.ToInt32(sqlReader["Montante"]),
+                    Montante = Convert.ToDouble(sqlReader["Montante"]),
+                    TraderCompra = Convert.ToInt32(sqlReader["TraderCompra"]),
+                    TraderVenda = Convert.ToInt32(sqlReader["TraderVenda"]),
                     ValorTotal = Convert.ToDouble(sqlReader["ValorTotal"])
                 });
             }

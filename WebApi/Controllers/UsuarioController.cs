@@ -3,11 +3,11 @@ using WebApi.Models;
 
 namespace WebApi.Controllers
 {
-    [RoutePrefix("api")]
-    public class UserController : ApiController
+    public class UsuarioController : ApiController
     {
-        [HttpGet]
-        public IHttpActionResult Get(string username, string password)
+        [HttpPost]
+        [ActionName("Teste")]
+        public IHttpActionResult PostTeste(string username, string password)
         {
             try
             {
@@ -21,7 +21,7 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Post([FromBody] User user)
+        public IHttpActionResult PostUsuario([FromBody] User user)
         {
             try
             {

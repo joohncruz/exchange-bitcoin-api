@@ -10,11 +10,41 @@ let elementos = {
     elResultadoPorcentagem: document.querySelector('#resultadoPorcentagem')
 }
 
+let exchanges = {
+    '1': {
+        name: 'FoxBit',
+        online: () => { return axios.get('https://api.blinktrade.com/api/v1/BRL/ticker?crypto_currency=BTC') }
+    },
+    '2': {
+        name: 'MecBit',
+        online: () => { return axios.get('https://mercadobitcoin.net/api/BTC/ticker/') }
+    },
+    '3': {
+        name: 'B2U',
+        online: () => { return axios.get('https://www.bitcointoyou.com/api/ticker.aspx') }
+    }
+}
+
+let testeFun = (element) => {
+    exchanges[element.value].online()
+        .then(result => {
+            if (exchanges[element.value].name == 'MecBit' || exchanges[element.value].name == 'B2U') {
+                elementos.elValorCompra.value = result.data.ticker.last
+            }
+
+            if (exchanges[element.value].name == 'FoxBit') {
+                alert('Problema de cors origin')
+            }
+        })
+        .catch(error => console.log(error))
+}
+
 let buscarOrdensDeCompra = () => {
 
     axios.get(`http://localhost:49945/api/buscar`, { headers: { 'Authorization': `bearer ${loadToken().access_token}` } })
         .then(response => document.querySelector('.dados-compra').innerHTML = renderTable(response.data))
         .catch(error => console.log(error))
+
 }
 
 buscarOrdensDeCompra()
@@ -34,7 +64,16 @@ let comprar = () => {
             'TraderCompra': elementos.elExchangeCompra.value,
             'TraderVenda': elementos.elExchangeVenda.value
         }, { headers: { 'Authorization': `bearer ${loadToken().access_token}` }})
-        .then(resultado => console.log(resultado))
+        .then(resultado => {
+            elementos.elValorCompra.value == '';
+            elementos.elValorVenda.value == '';
+            elementos.elMontante.value == '';
+
+            alert('Ordem de compra executada!!')
+
+            buscarOrdensDeCompra()
+
+        })
         .catch(error => console.log(error))
 
 }
@@ -93,9 +132,9 @@ let templateRow = (id, valorCompra, valorVenda, montante, valorTotal, porcentage
         <tr>
             <th scope="row">${id}</th>
             <td>R$ ${valorCompra}</td>
-            <td>${traderCompra}</td>
+            <td>${exchanges[traderCompra].name}</td>
             <td>R$ ${valorVenda}</td>
-            <td>${traderVenda}</td>
+            <td>${exchanges[traderVenda].name}</td>
             <td>R$ ${montante}</td>
             <td>R$ ${valorTotal}</td>
             <td><button type="button" class="btn btn-danger">Excluir</button></td>
